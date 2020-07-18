@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Alfredo's blog</title>
+    <title>{% block title %}{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?Tangerine:bold,bolditalic|Inconsolata:italic|Droid+Sans" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
@@ -12,8 +12,13 @@
 <body>
 <div class="page-header">
     {% if user.is_authenticated %}
-    <a href="{% url 'post_draft_list' %}" class="top-menu"><i class="fab fa-firstdraft"></i></a>
-    <a href="{% url 'post_new' %}" class="top-menu"><i class="fas fa-plus-circle"></i></a>
+        <a href="{% url 'logout' %}" class="top-menu"><i class="fas fa-sign-out-alt"></i></a>
+        <a href="{% url 'post_draft_list' %}" class="top-menu"><i class="fab fa-firstdraft"></i></a>
+        <a href="{% url 'post_new' %}" class="top-menu"><i class="fas fa-plus-circle"></i></a>
+
+    {% else %}
+        <a href="{% url 'login' %}" class="top-menu"><i class="fas fa-sign-in-alt"></i></a>
+
     {% endif %}
 
     <h1><a href="{% url "post_list" %}">Alfredo's Blog</a></h1>
