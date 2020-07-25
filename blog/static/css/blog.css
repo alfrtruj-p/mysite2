@@ -49,3 +49,8 @@ h1, h2, h3, h4 {
 .fa-edit::before {
     color: #212529;
 }
+
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+

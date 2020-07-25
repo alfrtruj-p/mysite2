@@ -26,7 +26,7 @@ urlpatterns = [
 
     # 127.0.0.1:8000/accounts/logout --> local
     # mydjangosite.com/accounts/logout --> online
-    path('accounts/logout', auth_views.LogoutView.as_view(template_name="registration/logout.html"), name='logout'),
+    path('accounts/logout/', auth_views.LogoutView.as_view(template_name="registration/logout.html"), name='logout'),
 
     path('', include('blog.urls')),
 ]
